@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class Demo3_PromptTemplate {
 
     public static void main(String[] args) {
-        var model = DefaultOpenAiModel.instance();
+        var model = DefaultModels.openAi();
 
         var template = "创建一个关于 {{dishType}} 的烹饪配方，需要准备以下材料：{{ingredients}}。";
         PromptTemplate promptTemplate = PromptTemplate.from(template);

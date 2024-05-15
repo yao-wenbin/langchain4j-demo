@@ -4,7 +4,6 @@ import dev.langchain4j.model.input.Prompt;
 import dev.langchain4j.model.input.structured.StructuredPrompt;
 import dev.langchain4j.model.input.structured.StructuredPromptProcessor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Demo4_StructuredPromptTemplate {
@@ -37,7 +36,7 @@ public class Demo4_StructuredPromptTemplate {
     }
 
     public static void main(String[] args) {
-        var model = DefaultOpenAiModel.instance();
+        var model = DefaultModels.openAi();
 
         var structuredPrompt = new CreateRecipePrompt("沙拉", List.of("黄瓜", "洋葱", "橄榄", "番茄"));
         Prompt prompt = StructuredPromptProcessor.toPrompt(structuredPrompt);
