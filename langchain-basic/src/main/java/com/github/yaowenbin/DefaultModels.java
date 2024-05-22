@@ -17,7 +17,8 @@ public class DefaultModels {
             .build();
 
     private static ChatLanguageModel qianfanModel = QianfanChatModel.builder()
-            .modelName("Yi-34B-Chat")
+            .modelName("ERNIE-Speed-8K")
+            .endpoint("ernie_speed")
             .apiKey(System.getenv("QIANFAN_API_KEY"))
             .secretKey(System.getenv("QIANFAN_SECRET_KEY"))
             .build();
