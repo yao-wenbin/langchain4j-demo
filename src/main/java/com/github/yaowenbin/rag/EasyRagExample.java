@@ -1,5 +1,6 @@
 package com.github.yaowenbin.rag;
 
+import com.github.yaowenbin.Assistant;
 import com.github.yaowenbin.DefaultModels;
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
@@ -11,6 +12,7 @@ import dev.langchain4j.service.AiServices;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
 import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
 
+import static com.github.yaowenbin.rag.Utils.toPath;
 import static dev.langchain4j.data.document.loader.FileSystemDocumentLoader.loadDocuments;
 
 import java.net.URISyntaxException;
@@ -24,10 +26,7 @@ import java.util.List;
 
 public class EasyRagExample {
 
-    interface Assistant {
 
-        String chat(String userMessage);
-    }
 
     public static void main(String[] args) {
         String documentPath = "documents/";
@@ -51,14 +50,7 @@ public class EasyRagExample {
         return FileSystems.getDefault().getPathMatcher("glob:" + glob);
     }
 
-    public static Path toPath(String relativePath) {
-        try {
-            URL fileUrl = EasyRagExample.class.getClassLoader().getResource(relativePath);
-            return Paths.get(fileUrl.toURI());
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 
 
 
