@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb;MODE=MYSQL;DATABASE_TO_UPPER=false;NON_KEYWORDS=USER # MODE 使用 MySQL 模式；DATABASE_TO_UPPER 配置表和字段使用小写； NON_KEYWORDS禁用user关键字（如果你的系统中的用户表名为user时使用，带有前缀的话则不需要）
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: sa
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/langchain-data?characterEncoding=utf-8&useSSL=false&serverTimeZone=GMT+8&rewriteBatchedStatements=true # MODE 使用 MySQL 模式；DATABASE_TO_UPPER 配置表和字段使用小写
+    username: root
+    password: root
 
